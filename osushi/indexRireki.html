@@ -4,14 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width initial-scale=1">
         <title>osushi-rireki</title>
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css.bootstrap.min.css">
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <div id="app">
-            <button @click="moveHome" class="btn btn-primary">戻る</button>
+        <div id="rireki" class=".container"></div>
+            <div class="text-center">
+                <h1>{{ appName }}</h1>
+                <table border="1">
+                    <tr>
+                        <th v-for="map in getRirekiMap" v-bind:name="map.id">
+                            {{ map.text }}
+                        </th>
+                    </tr>
+                    <tr v-for="data in getRirekiData">
+                        <td v-for="map in getRirekiMap" v-bind:name="map.id">
+                            {{ data[map.id] }}
+                        </td>
+                    </tr>
+                </table>
+                <button @click="moveHome" class="btn btn-primary">戻る</button>
+            </div>
         </div>
         <script src="//unpkg.com/vue@3/dist/vue.global.js"></script>
-        <script src="main.js" defer></script>
+        <script src="rireki.js" defer></script>
         <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" defer></script>
     </body>
 </html>

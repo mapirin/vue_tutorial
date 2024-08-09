@@ -13,18 +13,15 @@ const app = Vue.createApp({
     },
     methods: {
         plus(){
-            this.message = "OsushiPoint plus 1";
+            this.message = "1ポイント貯める";
             this.currentPoint ++;
         },
         minus(){
-            this.message = "OsushiPoint minus 4";
+            this.message = "4ポイント使う";
             this.currentPoint -= 4;
         },
         moveRireki(){
             window.open("indexRireki.html");
-        },
-        moveHome(){
-            window.close("indexRireki.html");
         }
     }
 });
